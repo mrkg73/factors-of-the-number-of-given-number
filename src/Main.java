@@ -9,13 +9,8 @@ import java.util.Scanner;
             int num= sc.nextInt();
             sc.close();
             System.out.printf("Factors of %d are:",num);
-            for (int i=1; i<=num;i+=1)
-            {
-                if (num%i ==0) System.out.printf("%d ",i);
-
-            }}
-
-
+            IntStream.iterate(1,s->s<=num,s->s+=1).filter(s->num%s ==0).forEach(s->System.out.printf("%d ", s));
+        }
 
 
 
